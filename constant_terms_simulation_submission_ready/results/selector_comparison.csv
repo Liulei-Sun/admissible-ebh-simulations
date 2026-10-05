@@ -1,0 +1,16 @@
+nonnulls,beta,status,status_scope,replications,ebh_containment_rate,ebh_containment_violation_count,selector_set_change_count_vs_original,selector_set_change_rate_vs_original,maximum_absolute_rejection_count_change_vs_original,mean_rejection_count_change_vs_original,changed_true_positive_count_vs_original,mean_tpr_change_vs_original
+500,0.0,admissible,underlying simultaneous procedure,1000,1.0,0,0,0.0,0,0.0,0,0.0
+500,0.004,admissible,underlying simultaneous procedure,1000,1.0,0,0,0.0,0,0.0,0,0.0
+500,0.8,inadmissible,underlying simultaneous procedure,1000,1.0,0,0,0.0,0,0.0,0,0.0
+500,0.9,inadmissible,underlying simultaneous procedure,1000,1.0,0,0,0.0,0,0.0,0,0.0
+500,1.0,inadmissible,underlying simultaneous procedure,1000,1.0,0,0,0.0,0,0.0,0,0.0
+1000,0.0,admissible,underlying simultaneous procedure,1000,1.0,0,0,0.0,0,0.0,0,0.0
+1000,0.004,admissible,underlying simultaneous procedure,1000,1.0,0,0,0.0,0,0.0,0,0.0
+1000,0.8,inadmissible,underlying simultaneous procedure,1000,1.0,0,0,0.0,0,0.0,0,0.0
+1000,0.9,inadmissible,underlying simultaneous procedure,1000,1.0,0,0,0.0,0,0.0,0,0.0
+1000,1.0,inadmissible,underlying simultaneous procedure,1000,1.0,0,0,0.0,0,0.0,0,0.0
+1500,0.0,admissible,underlying simultaneous procedure,1000,1.0,0,0,0.0,0,0.0,0,0.0
+1500,0.004,admissible,underlying simultaneous procedure,1000,1.0,0,0,0.0,0,0.0,0,0.0
+1500,0.8,inadmissible,underlying simultaneous procedure,1000,1.0,0,0,0.0,0,0.0,0,0.0
+1500,0.9,inadmissible,underlying simultaneous procedure,1000,1.0,0,0,0.0,0,0.0,0,0.0
+1500,1.0,inadmissible,underlying simultaneous procedure,1000,1.0,0,0,0.0,0,0.0,0,0.0

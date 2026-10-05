@@ -1,0 +1,113 @@
+\subsection{Learning asymmetric weights}
+
+We used $K=200$ one-sided Gaussian mean hypotheses at level $\alpha=0.05$,
+with $|N^c|\in\{20,30\}$. In each replication, $N^c$ was selected uniformly
+among subsets of the required size and
+$\{X_{t,i}:t=1,\ldots,60,\ i=1,\ldots,K\}$ were mutually independent, with
+$X_{t,i}\sim N(\mu_i,1)$, $\mu_i=0$ under a null, and $\mu_i=0.45$ under an
+alternative. The first $20$ observations were used only to learn weights and
+the last $40$ only to test. With $\eta=0.45$, we formed
+\[
+ E_{i,S}=\exp\left\{\eta\sum_{t\in S}X_{t,i}
+                -\frac{|S|\eta^2}{2}\right\}.
+\]
+The testing e-values and ordinary testing-only eBH set were kept fixed across
+all training-data conditions.
+
+Writing $s_i=E_{i,\{1,\ldots,20\}}$ and taking $\gamma=1$, the two learned
+constant-free weight systems, for every nonempty $A\subseteq\mathcal K$ and
+$i\in A$, were
+\[
+ \lambda^A_{i,1}=\lambda^A_{i,\mathrm{nor}}
+   =\frac{s_i}{\sum_{j\in A}s_j},\qquad
+ \lambda^A_{i,2}=\lambda^A_{i,\mathrm{adj}}
+   =\frac1K+\frac{K-|A|}{K}\frac{s_i}{\sum_{j\in A}s_j},
+ \qquad \lambda^A_{0,\ell}=0.
+\]
+Conditional on the independent training data, these weights are fixed and the
+testing e-values remain valid, giving conditional and hence unconditional FDR
+control for the reported learned procedures.
+
+For persistent medicine-specific measurement error, we drew one
+$\varepsilon_i\stackrel{\mathrm{iid}}{\sim}N(0,0.1)$ per medicine and replication,
+independently of all frozen data, and replaced the training observations by
+\[
+  X^{\star}_{t,i}=X_{t,i}+\varepsilon_i,
+  \qquad t=1,\ldots,20.
+\]
+Thus the training sufficient statistic changes by $20\varepsilon_i$, while the
+testing statistic is unchanged.  We learned weights proportional to
+$\exp\{0.45\sum_{t=1}^{20}X^{\star}_{t,i}\}$ on the training sample, then applied
+the learned procedures to the independent testing e-values. We also considered the
+signed-square condition $X^\star_{t,i}=X_{t,i}^2\operatorname{sgn}(X_{t,i})$.
+For comparison, the naive pooled procedure inserted the contaminated training
+sum and clean testing sum into the clean 60-observation e-value formula.
+
+Procedure 1 reports a globally maximum-cardinality certified set. Procedure 2
+reports a maximum-cardinality certified set among those containing ordinary
+testing-only eBH. Among sets of optimal cardinality, both procedures maximize
+the sum of the testing e-values; any remaining numerical tie is resolved by the
+fixed one-thread solver configuration with solver seed zero.
+
+The persistent-error variance was fixed at $0.1$. The same Gaussian base data,
+truth labels, testing e-values, ordinary-eBH prefixes, and testing-only results
+were used across the training-data conditions. The $R=1000$ results combine two
+independently seeded batches of $500$ replications. The second batch was added
+to improve Monte Carlo precision, while the first batch was left unchanged.
+Every MCSE is the sample standard deviation of the 1,000 replication-level TPR
+or FDP values divided by $\sqrt{1000}$.
+
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Empirical TPR and FDR at $\alpha=0.05$ over $1{,}000$ replications; Monte Carlo standard errors are in parentheses.}
+\label{tab:learned-weight-power}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{@{}p{0.44\linewidth}ccc@{}}
+\toprule
+Procedure and training-data setting & $|N^c|$ & TPR (MCSE) & FDR (MCSE) \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Panel A: clean training data}}\\
+\addlinespace[2pt]
+Mean $\overline{\mathrm{eBH}}$, full data & 20 & 0.5370 (0.0043) & 0.0071 (0.0008) \\
+Mean $\overline{\mathrm{eBH}}$, full data & 30 & 0.6027 (0.0034) & 0.0056 (0.0005) \\
+Mean $\overline{\mathrm{eBH}}$, testing sample only & 20 & 0.1790 (0.0042) & 0.0036 (0.0012) \\
+Mean $\overline{\mathrm{eBH}}$, testing sample only & 30 & 0.2506 (0.0040) & 0.0040 (0.0007) \\
+$\mathrm{eBH}$, testing sample only & 20 & 0.1584 (0.0039) & 0.0026 (0.0012) \\
+$\mathrm{eBH}$, testing sample only & 30 & 0.2096 (0.0038) & 0.0029 (0.0007) \\
+Learned asymmetric closed eBH 1 & 20 & 0.4708 (0.0055) & 0.0044 (0.0006) \\
+Learned asymmetric closed eBH 1 & 30 & 0.5174 (0.0049) & 0.0041 (0.0005) \\
+Learned asymmetric closed eBH 2 & 20 & 0.2478 (0.0051) & 0.0036 (0.0012) \\
+Learned asymmetric closed eBH 2 & 30 & 0.3500 (0.0046) & 0.0043 (0.0006) \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Panel B1: signed-square power distortion}}\\
+\addlinespace[2pt]
+Mean $\overline{\mathrm{eBH}}$, testing sample only & 20 & 0.1790 (0.0042) & 0.0036 (0.0012) \\
+Mean $\overline{\mathrm{eBH}}$, testing sample only & 30 & 0.2506 (0.0040) & 0.0040 (0.0007) \\
+$\mathrm{eBH}$, testing sample only & 20 & 0.1584 (0.0039) & 0.0026 (0.0012) \\
+$\mathrm{eBH}$, testing sample only & 30 & 0.2096 (0.0038) & 0.0029 (0.0007) \\
+Learned asymmetric closed eBH 1 & 20 & 0.2742 (0.0060) & 0.0020 (0.0006) \\
+Learned asymmetric closed eBH 1 & 30 & 0.2747 (0.0059) & 0.0016 (0.0004) \\
+Learned asymmetric closed eBH 2 & 20 & 0.2304 (0.0050) & 0.0033 (0.0012) \\
+Learned asymmetric closed eBH 2 & 30 & 0.3151 (0.0046) & 0.0038 (0.0006) \\
+Naive mean $\overline{\mathrm{eBH}}$, pooled full data & 20 & 0.7652 (0.0032) & 0.0710 (0.0020) \\
+Naive mean $\overline{\mathrm{eBH}}$, pooled full data & 30 & 0.7945 (0.0025) & 0.0580 (0.0015) \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Panel B2: persistent medicine-specific error, $\varepsilon_i\sim N(0,0.1)$}}\\
+\addlinespace[2pt]
+Mean $\overline{\mathrm{eBH}}$, testing sample only & 20 & 0.1790 (0.0042) & 0.0036 (0.0012) \\
+Mean $\overline{\mathrm{eBH}}$, testing sample only & 30 & 0.2506 (0.0040) & 0.0040 (0.0007) \\
+$\mathrm{eBH}$, testing sample only & 20 & 0.1584 (0.0039) & 0.0026 (0.0012) \\
+$\mathrm{eBH}$, testing sample only & 30 & 0.2096 (0.0038) & 0.0029 (0.0007) \\
+Learned asymmetric closed eBH 1 & 20 & 0.1768 (0.0044) & 0.0045 (0.0010) \\
+Learned asymmetric closed eBH 1 & 30 & 0.2038 (0.0041) & 0.0040 (0.0007) \\
+Learned asymmetric closed eBH 2 & 20 & 0.2016 (0.0044) & 0.0032 (0.0012) \\
+Learned asymmetric closed eBH 2 & 30 & 0.2857 (0.0043) & 0.0038 (0.0006) \\
+Naive mean $\overline{\mathrm{eBH}}$, pooled full data & 20 & 0.5388 (0.0042) & 0.0708 (0.0023) \\
+Naive mean $\overline{\mathrm{eBH}}$, pooled full data & 30 & 0.5853 (0.0033) & 0.0581 (0.0017) \\
+\bottomrule
+\end{tabular}
+\end{table}
+Table~\ref{tab:learned-weight-power} reports the final results. The testing-only procedures are identical across the training-data conditions because their e-values and rejection rules use only the frozen clean testing sample. Under the signed-square distortion, the naive pooled mean $\overline{\mathrm{eBH}}$ has empirical FDRs 0.0710 and 0.0580 for 20 and 30 nonnulls. Under persistent medicine-specific noise, its empirical FDRs are 0.0708 (95\% Monte Carlo interval [0.0662,0.0754]) and 0.0581 (95\% Monte Carlo interval [0.0547,0.0615]). This illustrates why the contaminated training observations should not be pooled into e-values as if they were clean.
+
+With persistent noise, Learned asymmetric closed eBH 1 has TPRs 0.1768 and 0.2038, while Learned asymmetric closed eBH 2 has TPRs 0.2016 and 0.2857. This pattern is consistent with persistent shifts corrupting the score ranking, while the $1/K$ floor in $\lambda_{\mathrm{adj}}$ limits reliance on those corrupted scores. The globally largest reported set from Procedure 1 contains ordinary testing eBH in 338/1000 and 152/1000 replications. Procedure 2 contains ordinary testing eBH by construction and did so in 1000/1000 and 1000/1000 replications. The testing samples and testing-only procedures are unchanged across all three training-data conditions.

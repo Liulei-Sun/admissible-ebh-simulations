@@ -1,0 +1,6 @@
+# Exact environment used for the final R=1000 run and publication audit.
+# Python: 3.12.13
+numpy==2.3.5
+pandas==3.0.1
+scipy==1.18.0
+highspy==1.15.1

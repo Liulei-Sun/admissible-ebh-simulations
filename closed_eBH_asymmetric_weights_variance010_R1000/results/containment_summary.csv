@@ -1,0 +1,13 @@
+condition,nonnulls,method,method_label,replications,contained,containment_failures,containment_rate,ebh_nonempty,contained_given_ebh_nonempty,failures_given_ebh_nonempty,containment_rate_given_ebh_nonempty
+clean,20,procedure1,Learned asymmetric closed eBH 1,1000,872,128,0.872,838,710,128,0.847255369928401
+clean,20,procedure2,Learned asymmetric closed eBH 2,1000,1000,0,1.0,838,838,0,1.0
+clean,30,procedure1,Learned asymmetric closed eBH 1,1000,796,204,0.796,945,741,204,0.7841269841269841
+clean,30,procedure2,Learned asymmetric closed eBH 2,1000,1000,0,1.0,945,945,0,1.0
+signed_square,20,procedure1,Learned asymmetric closed eBH 1,1000,444,556,0.444,838,282,556,0.33651551312649164
+signed_square,20,procedure2,Learned asymmetric closed eBH 2,1000,1000,0,1.0,838,838,0,1.0
+signed_square,30,procedure1,Learned asymmetric closed eBH 1,1000,234,766,0.234,945,179,766,0.18941798941798943
+signed_square,30,procedure2,Learned asymmetric closed eBH 2,1000,1000,0,1.0,945,945,0,1.0
+persistent_noise,20,procedure1,Learned asymmetric closed eBH 1,1000,338,662,0.338,838,176,662,0.2100238663484487
+persistent_noise,20,procedure2,Learned asymmetric closed eBH 2,1000,1000,0,1.0,838,838,0,1.0
+persistent_noise,30,procedure1,Learned asymmetric closed eBH 1,1000,152,848,0.152,945,97,848,0.10264550264550265
+persistent_noise,30,procedure2,Learned asymmetric closed eBH 2,1000,1000,0,1.0,945,945,0,1.0

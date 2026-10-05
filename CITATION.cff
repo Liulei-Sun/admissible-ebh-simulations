@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript when using these simulations."
+title: "Simulation packages for Admissibility and Complete Classes for False Discovery Rate Control with E-values"
+type: software
+version: 1.0.0
+repository-code: "https://github.com/Liulei-Sun/admissible-ebh-simulations"
+authors:
+  - family-names: Sun
+    given-names: Liulei
+  - family-names: Wang
+    given-names: Ruodu
+preferred-citation:
+  type: unpublished
+  title: "Admissibility and Complete Classes for False Discovery Rate Control with E-values"
+  authors:
+    - family-names: Sun
+      given-names: Liulei
+    - family-names: Wang
+      given-names: Ruodu

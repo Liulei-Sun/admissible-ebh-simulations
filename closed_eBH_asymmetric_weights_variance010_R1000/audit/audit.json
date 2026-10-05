@@ -1,0 +1,364 @@
+{
+  "audit_script_sha256": "2e2314ccf55fc01f9c08f82751b11e821726a0e77434e412495b1ee5d43138d6",
+  "counts": {
+    "containment_rows": 6000,
+    "global_cardinality_proof_records_checked": 12000,
+    "input_rows": 1200000,
+    "learned_membership_rows": 2400000,
+    "learned_result_rows": 12000,
+    "learned_sets_independently_feasibility_recertified": 12000,
+    "learned_stages": 24,
+    "legacy_procedure2_rows_recomputed": 21,
+    "procedure2_containment_failures": 0,
+    "replication_metric_rows": 30000,
+    "secondary_optimality_records_checked": 12000,
+    "summary_cells": 30
+  },
+  "full_independent_feasibility_recertification": true,
+  "maximum_scaled_regeneration_errors": {
+    "clean.full_e": 7.175161236803256e-15,
+    "clean.score": 3.3306690738754696e-15,
+    "clean.test_sum": 4.437987774204516e-16,
+    "clean.testing_e": 6.16297989067627e-16,
+    "clean.train_sum": 4.440848061564018e-16,
+    "persistent_noise.aggregate_shift": 4.4365269941043423e-16,
+    "persistent_noise.error": 2.2190191735861282e-16,
+    "persistent_noise.naive_e": 7.354018572142742e-15,
+    "persistent_noise.score": 3.3306690738754696e-15,
+    "persistent_noise.shared.e": 0.0,
+    "persistent_noise.shared.test_sum": 0.0,
+    "persistent_noise.shared.train_sum": 0.0,
+    "persistent_noise.sum": 3.608224830031759e-15,
+    "persistent_noise.z": 2.464717658454568e-16,
+    "seed_identity": 0.0,
+    "signed_square.naive_e": 4.376461476977554e-16,
+    "signed_square.score": 1.1102230246251565e-16,
+    "signed_square.shared.e": 3.134139854601258e-16,
+    "signed_square.shared.test_sum": 2.4649864639787263e-16,
+    "signed_square.shared.train_sum": 2.464977052836717e-16,
+    "signed_square.sum": 7.026718516507032e-16
+  },
+  "outputs": {
+    "containment_by_replication": {
+      "path": "results/containment_by_replication.csv",
+      "sha256": "eb77c76331c165809c05750b42c0669a3f72d776c8e5594d94cf0c3c30e17e24"
+    },
+    "containment_summary": {
+      "path": "results/containment_summary.csv",
+      "sha256": "4e6bddb6ecc93984e54515bdef51231aacbc6c27328285e353d42bf0e7397b26"
+    },
+    "correction_record": {
+      "path": "audit/correction_record.json",
+      "sha256": "5b2fc3e4efc30786b9c094c26cf94982c53bdbcc45238265eecfde8e23c1f53c"
+    },
+    "replication_metrics": {
+      "path": "results/replication_metrics.csv",
+      "sha256": "ed9f8741ecd86eeeb93450c650a2b8fc1f8c10887330bd75dd3412ed8aa5bd9c"
+    },
+    "report": {
+      "path": "results/report.md",
+      "sha256": "b310f85f734a916da52540cafe841e4c9d7049b092330aad3ec64d2dd480cb9c"
+    },
+    "stage_provenance": {
+      "path": "audit/stage_provenance.json",
+      "sha256": "8a6bd0bdc4f77fe37623ccac4d3d4153c01929a6c61a05d52fccb4ebfc06fac1"
+    },
+    "summary": {
+      "path": "results/summary.csv",
+      "sha256": "8b69cd376bae21310a350d84be3d8f72fab1d08705becb0aff31a29b66463dde"
+    }
+  },
+  "results": [
+    {
+      "FDR": 0.007099156807245042,
+      "FDR_MCSE": 0.0007998194277154556,
+      "TPR": 0.537,
+      "TPR_MCSE": 0.004331831571606261,
+      "condition": "clean",
+      "method": "full_mean",
+      "nonnulls": 20
+    },
+    {
+      "FDR": 0.003618253968253968,
+      "FDR_MCSE": 0.0012126559868647772,
+      "TPR": 0.179,
+      "TPR_MCSE": 0.004193636439486211,
+      "condition": "clean",
+      "method": "testing_mean",
+      "nonnulls": 20
+    },
+    {
+      "FDR": 0.0025511904761904764,
+      "FDR_MCSE": 0.001199591249192906,
+      "TPR": 0.15835,
+      "TPR_MCSE": 0.0038597506623064626,
+      "condition": "clean",
+      "method": "testing_ebh",
+      "nonnulls": 20
+    },
+    {
+      "FDR": 0.004381486977075213,
+      "FDR_MCSE": 0.0006147468046211572,
+      "TPR": 0.47075,
+      "TPR_MCSE": 0.005462304849994577,
+      "condition": "clean",
+      "method": "procedure1",
+      "nonnulls": 20
+    },
+    {
+      "FDR": 0.0035920745920745923,
+      "FDR_MCSE": 0.0011553076845782358,
+      "TPR": 0.24775,
+      "TPR_MCSE": 0.005093955818996263,
+      "condition": "clean",
+      "method": "procedure2",
+      "nonnulls": 20
+    },
+    {
+      "FDR": 0.005646773637551333,
+      "FDR_MCSE": 0.0005397134340270446,
+      "TPR": 0.6026666666666667,
+      "TPR_MCSE": 0.003402616643444346,
+      "condition": "clean",
+      "method": "full_mean",
+      "nonnulls": 30
+    },
+    {
+      "FDR": 0.003962899437164143,
+      "FDR_MCSE": 0.0006899602016030403,
+      "TPR": 0.25060000000000004,
+      "TPR_MCSE": 0.004041778813341469,
+      "condition": "clean",
+      "method": "testing_mean",
+      "nonnulls": 30
+    },
+    {
+      "FDR": 0.0029382718588600943,
+      "FDR_MCSE": 0.0007000342834006868,
+      "TPR": 0.20960000000000004,
+      "TPR_MCSE": 0.0037844632594546566,
+      "condition": "clean",
+      "method": "testing_ebh",
+      "nonnulls": 30
+    },
+    {
+      "FDR": 0.0040858274407947984,
+      "FDR_MCSE": 0.0004907091141735761,
+      "TPR": 0.5173666666666666,
+      "TPR_MCSE": 0.004887291462565158,
+      "condition": "clean",
+      "method": "procedure1",
+      "nonnulls": 30
+    },
+    {
+      "FDR": 0.004263352780690241,
+      "FDR_MCSE": 0.0006186074464155965,
+      "TPR": 0.3499666666666667,
+      "TPR_MCSE": 0.004645597966823889,
+      "condition": "clean",
+      "method": "procedure2",
+      "nonnulls": 30
+    },
+    {
+      "FDR": 0.003618253968253968,
+      "FDR_MCSE": 0.0012126559868647772,
+      "TPR": 0.179,
+      "TPR_MCSE": 0.004193636439486211,
+      "condition": "signed_square",
+      "method": "testing_mean",
+      "nonnulls": 20
+    },
+    {
+      "FDR": 0.0025511904761904764,
+      "FDR_MCSE": 0.001199591249192906,
+      "TPR": 0.15835,
+      "TPR_MCSE": 0.0038597506623064626,
+      "condition": "signed_square",
+      "method": "testing_ebh",
+      "nonnulls": 20
+    },
+    {
+      "FDR": 0.0020337051837051837,
+      "FDR_MCSE": 0.0005653481756784685,
+      "TPR": 0.27415,
+      "TPR_MCSE": 0.005997520133167353,
+      "condition": "signed_square",
+      "method": "procedure1",
+      "nonnulls": 20
+    },
+    {
+      "FDR": 0.0033452380952380947,
+      "FDR_MCSE": 0.0011676023789568008,
+      "TPR": 0.23039999999999997,
+      "TPR_MCSE": 0.005022555730508729,
+      "condition": "signed_square",
+      "method": "procedure2",
+      "nonnulls": 20
+    },
+    {
+      "FDR": 0.07095790202659398,
+      "FDR_MCSE": 0.0020273050947180603,
+      "TPR": 0.76515,
+      "TPR_MCSE": 0.0032285292163616703,
+      "condition": "signed_square",
+      "method": "naive_mean",
+      "nonnulls": 20
+    },
+    {
+      "FDR": 0.003962899437164143,
+      "FDR_MCSE": 0.0006899602016030403,
+      "TPR": 0.25060000000000004,
+      "TPR_MCSE": 0.004041778813341469,
+      "condition": "signed_square",
+      "method": "testing_mean",
+      "nonnulls": 30
+    },
+    {
+      "FDR": 0.0029382718588600943,
+      "FDR_MCSE": 0.0007000342834006868,
+      "TPR": 0.20960000000000004,
+      "TPR_MCSE": 0.0037844632594546566,
+      "condition": "signed_square",
+      "method": "testing_ebh",
+      "nonnulls": 30
+    },
+    {
+      "FDR": 0.0015754203098243345,
+      "FDR_MCSE": 0.0004444795158636857,
+      "TPR": 0.2747,
+      "TPR_MCSE": 0.005856220319245054,
+      "condition": "signed_square",
+      "method": "procedure1",
+      "nonnulls": 30
+    },
+    {
+      "FDR": 0.0037618236124041075,
+      "FDR_MCSE": 0.0005921178203382666,
+      "TPR": 0.31510000000000005,
+      "TPR_MCSE": 0.0045821741185802095,
+      "condition": "signed_square",
+      "method": "procedure2",
+      "nonnulls": 30
+    },
+    {
+      "FDR": 0.05803921176198739,
+      "FDR_MCSE": 0.0014976121728049138,
+      "TPR": 0.7944666666666667,
+      "TPR_MCSE": 0.0025276678302767106,
+      "condition": "signed_square",
+      "method": "naive_mean",
+      "nonnulls": 30
+    },
+    {
+      "FDR": 0.003618253968253968,
+      "FDR_MCSE": 0.0012126559868647772,
+      "TPR": 0.179,
+      "TPR_MCSE": 0.004193636439486211,
+      "condition": "persistent_noise",
+      "method": "testing_mean",
+      "nonnulls": 20
+    },
+    {
+      "FDR": 0.0025511904761904764,
+      "FDR_MCSE": 0.001199591249192906,
+      "TPR": 0.15835,
+      "TPR_MCSE": 0.0038597506623064626,
+      "condition": "persistent_noise",
+      "method": "testing_ebh",
+      "nonnulls": 20
+    },
+    {
+      "FDR": 0.004478571428571429,
+      "FDR_MCSE": 0.0010058637994636783,
+      "TPR": 0.1768,
+      "TPR_MCSE": 0.004357837852737382,
+      "condition": "persistent_noise",
+      "method": "procedure1",
+      "nonnulls": 20
+    },
+    {
+      "FDR": 0.003213924963924964,
+      "FDR_MCSE": 0.001161669128228124,
+      "TPR": 0.20160000000000003,
+      "TPR_MCSE": 0.004437017819113095,
+      "condition": "persistent_noise",
+      "method": "procedure2",
+      "nonnulls": 20
+    },
+    {
+      "FDR": 0.07079525221940082,
+      "FDR_MCSE": 0.002342768861043901,
+      "TPR": 0.5388000000000001,
+      "TPR_MCSE": 0.004165562616491549,
+      "condition": "persistent_noise",
+      "method": "naive_mean",
+      "nonnulls": 20
+    },
+    {
+      "FDR": 0.003962899437164143,
+      "FDR_MCSE": 0.0006899602016030403,
+      "TPR": 0.25060000000000004,
+      "TPR_MCSE": 0.004041778813341469,
+      "condition": "persistent_noise",
+      "method": "testing_mean",
+      "nonnulls": 30
+    },
+    {
+      "FDR": 0.0029382718588600943,
+      "FDR_MCSE": 0.0007000342834006868,
+      "TPR": 0.20960000000000004,
+      "TPR_MCSE": 0.0037844632594546566,
+      "condition": "persistent_noise",
+      "method": "testing_ebh",
+      "nonnulls": 30
+    },
+    {
+      "FDR": 0.003967426506242296,
+      "FDR_MCSE": 0.0007451004164152626,
+      "TPR": 0.20376666666666668,
+      "TPR_MCSE": 0.004112508352230958,
+      "condition": "persistent_noise",
+      "method": "procedure1",
+      "nonnulls": 30
+    },
+    {
+      "FDR": 0.003761092867400917,
+      "FDR_MCSE": 0.0006209045484316795,
+      "TPR": 0.2856666666666667,
+      "TPR_MCSE": 0.004253545368719995,
+      "condition": "persistent_noise",
+      "method": "procedure2",
+      "nonnulls": 30
+    },
+    {
+      "FDR": 0.0580946482951643,
+      "FDR_MCSE": 0.0017137925024545574,
+      "TPR": 0.5852999999999999,
+      "TPR_MCSE": 0.003329079534695154,
+      "condition": "persistent_noise",
+      "method": "naive_mean",
+      "nonnulls": 30
+    }
+  ],
+  "runtime": {
+    "highspy": "1.15.1",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "python": "3.12.13",
+    "scipy": "1.18.0"
+  },
+  "schema": "closed-ebh-asymmetric-weights-publication-audit-v1",
+  "solver_source_sha256": {
+    "__init__.py": "fc2ec858ffb88dd416c3c9d929f9d3b9d42d4a7f9cc51fd86a8a3d646e844953",
+    "choice2_oracle.py": "c5dea34557b53554dad13ff48af232cbad6d3f53e9cdef95ee3adff2197c5b6f",
+    "method1_oracle.py": "5bbe003b52efe0eb863d1d76a10bca3b467bf3916682f747b4036b849ed52580",
+    "optimize_choice2_learned.py": "a916c29e8f12fe1de61e6480850b5b81209d0972f53e8b4e3b211921191834a3",
+    "optimize_maximal_learned.py": "a8af2ddfdadf24994ca548606869795b269d262d51c22b254a7a554e36c96572",
+    "optimize_method1_learned.py": "261b1fdcc70852ac2a1b5e5ba6b806bf383bd29e2ef632f287ac13d735307e15",
+    "optimize_original_formula_learned.py": "0a73ef3f36a0ca3df0f4aa8ec90b03e90837c128f049926b1b4b1f8022a42950",
+    "original_formula_oracle.py": "4ce86049d25fb9e03a5b439e904f65c3c74e079eb4be6048a52dddafc3c8bd43",
+    "run_learned_asymmetric_closed_ebh_2.py": "81c4f3f03c75a98a3796a0973299f62aac2aa25c27d644ab7ed4bf2b82838615"
+  },
+  "status": "verified",
+  "study_config_sha256": "bcf5e80a7867f79fdb77518b3d91cbf03f6537ed3dec896ca3c0af3fd82ad49a"
+}

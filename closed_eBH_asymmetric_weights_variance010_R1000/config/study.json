@@ -1,0 +1,66 @@
+{
+  "schema": "closed-ebh-asymmetric-weights-publication-study-v1",
+  "K": 200,
+  "alpha": 0.05,
+  "nonnull_counts": [20, 30],
+  "signal_mean": 0.45,
+  "e_value_tilt": 0.45,
+  "training_observations": 20,
+  "testing_observations": 40,
+  "replications": 1000,
+  "conditions": {
+    "clean": {
+      "training_transformation": "identity"
+    },
+    "signed_square": {
+      "training_transformation": "sign(x)*abs(x)^2"
+    },
+    "persistent_noise": {
+      "definition": "X_star[t,i] = X[t,i] + epsilon[i] for every training t",
+      "error_distribution": "epsilon[i] iid N(0,0.1)",
+      "error_variance": 0.1,
+      "error_standard_deviation": 0.31622776601683794,
+      "seed_salt_hex": "0x5052534953543032"
+    }
+  },
+  "signed_square_residual_seed_salt_hex": "0x5349474e45445351",
+  "batches": [
+    {
+      "id": "batch1_seed20260803",
+      "seed": 20260803,
+      "local_replications": 500,
+      "global_replication_start": 1,
+      "global_replication_end": 500
+    },
+    {
+      "id": "batch2_seed20260804",
+      "seed": 20260804,
+      "local_replications": 500,
+      "global_replication_start": 501,
+      "global_replication_end": 1000
+    }
+  ],
+  "learned_procedures": {
+    "procedure1": {
+      "weights": "score[i]/sum_{j in A} score[j]",
+      "constraint": "globally maximum-cardinality certified set",
+      "secondary_objective": "maximum sum of testing e-values"
+    },
+    "procedure2": {
+      "weights": "1/K + (K-|A|)/K * score[i]/sum_{j in A} score[j]",
+      "constraint": "maximum-cardinality certified set containing testing-only eBH",
+      "secondary_objective": "maximum sum of testing e-values"
+    }
+  },
+  "optimizer": {
+    "workers": 4,
+    "separator_time_limit_seconds": 300.0,
+    "separator_threads": 1,
+    "master_time_limit_seconds": 300.0,
+    "layer_batch": 100,
+    "fixed_batch": 100,
+    "layer_window": 10,
+    "checkpoint_every": 1,
+    "solver_seed": 0
+  }
+}
