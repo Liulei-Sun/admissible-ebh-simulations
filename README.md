@@ -17,6 +17,8 @@ The asymmetric package includes its input data, result memberships, and scientif
 
 The validated environment is CPython 3.12.14 on Windows x86-64 with NumPy 2.3.5, pandas 3.0.1, SciPy 1.18.0, and highspy 1.15.1. `requirements-lock.txt` also pins transitive dependencies. The original reference-result metadata records Python 3.12.13.
 
+The GitHub Actions workflow uses CPython 3.12.14 on Ubuntu 24.04 and CPython 3.12.10 on Windows Server 2025, with the same pinned numerical dependencies. Python 3.12.10 is the last 3.12 release with official Windows installers; the GitHub Actions Python distribution does not provide a Windows 3.12.14 build. These CI runtime choices do not change the recorded local validation environment or the reference results.
+
 From the repository root, install the environment on Windows PowerShell:
 
 ```powershell

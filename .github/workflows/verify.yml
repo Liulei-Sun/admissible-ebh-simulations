@@ -13,7 +13,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        include:
+          - os: ubuntu-24.04
+            python: '3.12.14'
+          - os: windows-2025
+            python: '3.12.10'
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     env:
@@ -27,7 +31,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-python@v6
         with:
-          python-version-file: .python-version
+          python-version: ${{ matrix.python }}
           cache: pip
           cache-dependency-path: requirements-lock.txt
       - name: Install pinned dependencies
